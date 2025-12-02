@@ -7,8 +7,12 @@ interface InputLines {
     fun process(lines: List<String>): String
 
     companion object {
-        fun fromFile(fileName: String): List<String> {
+        fun fromFileAsList(fileName: String): List<String> {
             return Files.readAllLines(Paths.get(fileName))
+        }
+
+        fun fromFileAsString(fileName: String): String {
+            return fromFileAsList(fileName).joinToString("\n").trim()
         }
     }
 }

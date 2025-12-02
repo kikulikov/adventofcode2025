@@ -1,13 +1,11 @@
 package org.example
 
-import org.example.InputLines.Companion.fromFile
-import java.nio.file.Files
-import java.nio.file.Paths
+import org.example.InputLines.Companion.fromFileAsList
 
 /**
  * https://adventofcode.com/2025/day/1
  */
-class Day1Part2 : InputLines {
+private class Day1Part2 : InputLines {
 
     override fun process(lines: List<String>): String {
         var count = 0
@@ -53,6 +51,6 @@ private val dataSample = """
 private const val inputFile = "app/src/main/resources/day1.txt"
 
 fun main() {
-    println(">>> " + Day1Part2().process(dataSample.lines()))
-    println(">>> " + Day1Part2().process(fromFile(inputFile)))
+    println("Answer: " + Day1Part2().process(dataSample.lines()))
+    println("Answer: " + Day1Part2().process(fromFileAsList(inputFile)))
 }
